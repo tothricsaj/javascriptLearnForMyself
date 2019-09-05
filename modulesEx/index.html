@@ -5,6 +5,11 @@
     <title>Hello Module</title>
 </head>
 <body>
-
+    <h2>Module example</h2>
+    <script type="module">
+        import { createH2tag } from "./modules/h2tag.mjs";
+        document.body.insertAdjacentHTML('beforeend', createH2tag('Hello my dear friend!!!'));
+        document.body.insertAdjacentHTML('beforeend', createH2tag('How can I help you?'));
+    </script>
 </body>
 </html>
