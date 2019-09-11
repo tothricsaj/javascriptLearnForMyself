@@ -31,3 +31,12 @@ html, body {
     left: -50%;
     border: 2px solid black;
 }
+
+.grandchild {
+    width: 100px;
+    height: 100px;
+    background-color: lightgoldenrodyellow;
+    position: absolute;
+    top: 140%;
+    left: -100%;
+}
