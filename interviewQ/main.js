@@ -12,3 +12,20 @@ function outer() {
 }
 
 outer();
+
+console.log('####################################');
+
+var hero = {
+	_name: 'John Doe',
+	getSecretIdentify: function() {
+		return this._name;
+	}
+}
+
+var stolenIdentify = hero.getSecretIdentify.bind(hero);
+
+console.log(stolenIdentify());
+console.log('-------------------------');
+console.log(hero.getSecretIdentify());
+
+console.log('####################################');
