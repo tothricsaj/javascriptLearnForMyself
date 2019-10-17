@@ -11,10 +11,6 @@ html, body {
     border: 1px solid antiquewhite;
 }
 
-.parent .child {
-    position: absolute;
-}
-
 .child-1 {
     width: 150px;
     height: 150px;
@@ -36,7 +32,6 @@ html, body {
     width: 100px;
     height: 100px;
     background-color: lightgoldenrodyellow;
-    position: absolute;
     top: 140%;
     left: -100%;
 }

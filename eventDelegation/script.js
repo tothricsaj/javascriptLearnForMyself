@@ -17,6 +17,6 @@ child.addEventListener('click', function (event) {
 });
 
 child.addEventListener('mouseleave', function(event) {
-    event.stopPropagation();
     console.log(`%cYou leave the child`, 'background: green; color: white; padding: 3px;');
+    event.stopPropagation();
 });
