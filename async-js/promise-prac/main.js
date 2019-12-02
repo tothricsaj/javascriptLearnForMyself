@@ -10,12 +10,16 @@ function afterAsync(act) {
 }
 
 let p1 = new Promise((resolve, reject) => {
+    console.log('What will happen????');
     setTimeout(() => {
         resolve(asyncGreeting());
     }, 3000);
 });
 
+console.log('syncronus msg....');
+
 p1.then((act) => {
     afterAsync(act);
 });
+
 
