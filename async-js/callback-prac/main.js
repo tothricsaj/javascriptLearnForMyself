@@ -7,7 +7,9 @@ function count(callback) {
 }
 
 function myCallback() {
-    console.log(3);
+    setTimeout(() => {
+        console.log(3);
+    }, 3000);
 }
 
 count(myCallback);
