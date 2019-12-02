@@ -2,10 +2,11 @@ console.log('hello promise!!!');
 
 function asyncGreeting() {
     console.log('hello belloooooooo......what\'s the matter?');
+    return 'dance'
 }
 
-function afterAsync() {
-    console.log('Well, finnally!');
+function afterAsync(act) {
+    console.log('Well, finnally! We can go to ' + act);
 }
 
 let p1 = new Promise((resolve, reject) => {
@@ -14,7 +15,7 @@ let p1 = new Promise((resolve, reject) => {
     }, 3000);
 });
 
-p1.then(() => {
-    afterAsync();
+p1.then((act) => {
+    afterAsync(act);
 });
 
