@@ -11,21 +11,24 @@ function segment(arr1, arr2) {
     if(arr1 > arr2) {
         moreArr = arr1;
         lessArr = arr2;
-        console.log(`arr1 > arr2 ---> ${moreArr}, ${lessArr}`);
     } else if(arr1 < arr2) {
         moreArr = arr2;
         lessArr = arr1;
-        console.log(`arr1 < arr2 ---> ${moreArr}, ${lessArr}`);
     } else {
         moreArr = arr1;
         lessArr = arr2;
-        console.log(`arr1 = arr2 ---> ${moreArr}, ${lessArr}`);
     }
-    
-    console.log(moreArr, lessArr);
+
+    return moreArr.filter((value, index) => {
+        return lessArr.indexOf(value) !== -1;
+    });
 }
 
-segment(arr1, arr2);
+console.log(segment(arr1, arr2));
+console.log(segment([1, 2, 5], [2, 3, 5]));
+console.log(segment([6, 2, 1, 5, 7], [3, 4, 6, 6, 7]));
+
+
 
 /*
 function symDiff(...args) {
