@@ -1,24 +1,31 @@
-let arr1 = [1,2,3];
-let arr2 = [5, 2, 1, 4];
+let arr1 = [1,2,3, 2];
+let arr2 = [5, 2, 1, 4, 5];
 
-function segment(arr1, arr1) {
+function segment(arr1, arr2) {
     let moreArr;
     let lessArr;
+
+    arr1 = arr1.filter((v, i) => arr1.indexOf(v) === i);
+    arr2 = arr2.filter((v, i) => arr2.indexOf(v) === i);
 
     if(arr1 > arr2) {
         moreArr = arr1;
         lessArr = arr2;
+        console.log(`arr1 > arr2 ---> ${moreArr}, ${lessArr}`);
     } else if(arr1 < arr2) {
         moreArr = arr2;
         lessArr = arr1;
+        console.log(`arr1 < arr2 ---> ${moreArr}, ${lessArr}`);
     } else {
         moreArr = arr1;
         lessArr = arr2;
+        console.log(`arr1 = arr2 ---> ${moreArr}, ${lessArr}`);
     }
-
-    moreArr = moreArr.sort();
-    lessArr = lessArr.sort();
+    
+    console.log(moreArr, lessArr);
 }
+
+segment(arr1, arr2);
 
 /*
 function symDiff(...args) {
