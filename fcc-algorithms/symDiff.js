@@ -33,8 +33,8 @@ function segment(arr1, arr2) {
     });
 }
 
-console.log(segment(arr1, arr2));
-console.log(segment([1, 2, 5], [2, 3, 5]));
+// console.log(segment(arr1, arr2));
+// console.log(segment([1, 2, 5], [2, 3, 5]));
 // console.log(segment([6, 2, 1, 5, 7], [3, 4, 6, 6, 7]));
 
 
@@ -46,12 +46,14 @@ function symDiff(...args) {
         mergedArr = [...mergedArr, ...args[i]];
     }
     
-    
-    return mergedArr;
+    // make set from mergeArr
+    let mergedSet = makeSetFromArr(mergedArr);
+
+    return mergedSet;
     return result;
 }
 
-// console.log(symDiff(arr1, arr2));
+console.log(symDiff(arr1, arr2));
 
 /*
 console.log(symDiff(arr1, arr2));
