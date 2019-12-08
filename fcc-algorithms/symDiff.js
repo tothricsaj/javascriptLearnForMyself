@@ -1,12 +1,21 @@
-let arr1 = [1,2,3, 2];
+let arr1 = [1, 2, 3, 2];
 let arr2 = [5, 2, 1, 4, 5];
 
+const makeSetFromArr = (arr) => {
+    // make set from array and sort
+    return arr.filter((v, i) => arr.indexOf(v) === i).sort();
+}
+
 function segment(arr1, arr2) {
+    /*
+     * make segment of two set
+    */
+
     let moreArr;
     let lessArr;
 
-    arr1 = arr1.filter((v, i) => arr1.indexOf(v) === i);
-    arr2 = arr2.filter((v, i) => arr2.indexOf(v) === i);
+    arr1 = makeSetFromArr(arr1);
+    arr2 = makeSetFromArr(arr2);
 
     if(arr1 > arr2) {
         moreArr = arr1;
@@ -24,8 +33,8 @@ function segment(arr1, arr2) {
     });
 }
 
-// console.log(segment(arr1, arr2));
-// console.log(segment([1, 2, 5], [2, 3, 5]));
+console.log(segment(arr1, arr2));
+console.log(segment([1, 2, 5], [2, 3, 5]));
 // console.log(segment([6, 2, 1, 5, 7], [3, 4, 6, 6, 7]));
 
 
@@ -38,8 +47,11 @@ function symDiff(...args) {
     }
     
     
+    return mergedArr;
     return result;
 }
+
+// console.log(symDiff(arr1, arr2));
 
 /*
 console.log(symDiff(arr1, arr2));
