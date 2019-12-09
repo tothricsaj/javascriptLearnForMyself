@@ -25,6 +25,8 @@ function segment(arr1, arr2) {
      * make segment of two set
     */
 
+    console.log('segment function is running');
+
     this.arr1 = arr1;
     this.arr2 = arr2;
     
@@ -41,16 +43,36 @@ function segment(arr1, arr2) {
     });
 }
 
-console.log(segment(arr1, arr2));
-console.log(segment([1, 2, 5], [2, 3, 5]));
-console.log(segment([6, 2, 1, 5, 7], [3, 4, 6, 6, 7]));
+// console.log(segment(arr1, arr2));
+// console.log(segment([1, 2, 5], [2, 3, 5]));
+// console.log(segment([6, 2, 1, 5, 7], [3, 4, 6, 6, 7]));
 
-/*
 function symDiffOnlyTwoArr(arr1, arr2) {
-    
+    this.arr1 = arr1;
+    this.arr2 = arr2;
+
+    this.moreArr = '';
+    this.lessArr = '';
+
+    this.segmentSet = segment(this.arr1, this.arr2);
+
+    checkMoreAndLess();
+
+    let mergedArr = [...this.moreArr, ...this.lessArr];
+    let result = [];
+
+    // make set from mergeArr
+    let mergedSet = makeSetFromArr(mergedArr);
+
+    console.log(`this is the mergeSet ${mergedSet}`);
+    console.log(`this is the segmetSet ${this.segmetSet}`);
+    return 'end of test';
+    return result;
 }
 
+console.log(symDiffOnlyTwoArr([1, 2, 5], [2, 3, 5]));
 
+/*
 function symDiff(...args) {
     let mergedArr = [];
     let result = [];
