@@ -33,6 +33,9 @@ function segment(arr1, arr2) {
     this.arr1 = makeSetFromArr(this.arr1);
     this.arr2 = makeSetFromArr(this.arr2);
 
+
+    console.log(`the arr1 ${this.arr1}`);
+
     this.moreArr = '';
     this.lessArr = '';
     
@@ -65,7 +68,7 @@ function symDiffOnlyTwoArr(arr1, arr2) {
     let mergedSet = makeSetFromArr(mergedArr);
 
     console.log(`this is the mergeSet ${mergedSet}`);
-    console.log(`this is the segmetSet ${this.segmetSet}`);
+    console.log(`this is the segmetSet ${this.segmentSet}`);
     return 'end of test';
     return result;
 }
