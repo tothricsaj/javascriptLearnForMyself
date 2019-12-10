@@ -1,3 +1,7 @@
+// this is a fcc challange :)
+// and now, I am testing some git command
+//
+
 let arr1 = [1, 2, 3, 2];
 let arr2 = [5, 2, 1, 4, 5];
 
