@@ -1,3 +1,7 @@
+console.log(sum(3,5));
+console.log(city);
+console.log(name);
+
 function sum (x, y) {
     return x + y;
 }
@@ -9,3 +13,7 @@ let info = {
 };
 
 var city = 'Szeged';
+
+console.log(city);
+console.log(name);
+
