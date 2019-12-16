@@ -6,5 +6,7 @@ myObj.prototype.toString = function awesomeMsg () {
     return 'This is a msg....awesome yhea???';
 }
 
-console.log(`${myObj}`);
+let objInstance = new myObj();
+
+console.log(objInstance.toString());
 console.log(myObj.toString());
