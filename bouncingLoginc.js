@@ -1,12 +1,14 @@
-let x = 0;
+let x = 1;
+let step = 1;
 let counter = 0;
 
 let timer = setInterval(() => {
-    if(x<3 && x>=0) x += 1;
-    else if(x>=3 && x<0) x-=1;
 
     console.log(x);
 
+    if(x >= 3 || x <= 0) step *= -1;
+    x += step;
+
     counter++;
-    if(counter === 5) clearInterval(timer);
-}, 1300);
+    if(counter === 19) clearInterval(timer);
+}, 1000);
