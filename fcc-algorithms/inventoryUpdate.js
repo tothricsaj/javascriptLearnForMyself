@@ -1,14 +1,16 @@
 function updateInventory(arr1, arr2) {
     arr2.forEach((newEl, newInd) => {
+        let tmpArr = []
         arr1.forEach((currEl, currInd) => {
-            console.table({
-                newElem: newEl[1],
-                currentElem: currEl[1]
-            })
+            
             if(newEl[1] === currEl[1]) {
                 currEl[0] += newEl[0]
             }
+
+            tmpArr.push(currEl[1])
         })
+
+        if(!tmpArr.includes(newEl[1])) arr1.push(newEl)
     });
 
     return arr1
