@@ -3,7 +3,7 @@ function updateInventory(arr1, arr2) {
     arr2.forEach((newEl, i) => {
         arr1.forEach((curEl, ind) => {
             console.log(curEl[1] === newEl[1])
-            if(arr1.includes(newEl[1])) {
+            if(curEl[1] === newEl[1]) {
                 console.log('in')
                 arr1[0] += arr2[0]
             }
