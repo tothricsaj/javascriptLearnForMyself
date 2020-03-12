@@ -1,18 +1,17 @@
 function updateInventory(arr1, arr2) {
-    // All inventory must be accounted for or you're fired!
-    arr2.forEach((newEl, i) => {
-        arr1.forEach((curEl, ind) => {
-            console.log(curEl[1] === newEl[1])
-            if(curEl[1] === newEl[1]) {
-                console.log('in')
-                arr1[0] += arr2[0]
+    arr2.forEach((newEl, newInd) => {
+        arr1.forEach((currEl, currInd) => {
+            console.table({
+                newElem: newEl[1],
+                currentElem: currEl[1]
+            })
+            if(newEl[1] === currEl[1]) {
+                currEl[0] += newEl[0]
             }
-        });
-
-        console.log('---------------------------------------')
-        
+        })
     });
-    return arr1;
+
+    return arr1
 }
 
 // Example inventory lists
