@@ -2,7 +2,7 @@ let output = function (arr) {
     console.log(arr)
 }
 
-function swap(arr, index1, index2) {
+let swap = function (arr, index1, index2) {
     let tmp = arr[index1]
     arr[index1] = arr[index2]
     arr[index2] = tmp
@@ -10,7 +10,7 @@ function swap(arr, index1, index2) {
     return arr
 }
 
-function heapGenerate(arr, n, output) {
+let heapGenerate = function (arr, n, output) {
     if(n === 1) {
         output(arr)
     } else {
