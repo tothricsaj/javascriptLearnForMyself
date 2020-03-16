@@ -11,7 +11,6 @@ let heapPermut = function(arr, output, n) {
 
     if(n === 1) {
         output(arr)
-        console.log(arr)
     } else {
         for(let i=1; i<=n; i++) {
 
