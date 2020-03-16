@@ -1,32 +1,33 @@
-let output = function (arr) {
-    console.log(arr)
-}
-
 let swap = function (arr, index1, index2) {
     let tmp = arr[index1]
     arr[index1] = arr[index2]
     arr[index2] = tmp
-
-    return arr
 }
 
-let heapGenerate = function (arr, n, output) {
+let heapPermut = function(arr, output, n) {
+    n = n || arr.length
+
     if(n === 1) {
         output(arr)
+        console.log(arr)
     } else {
-        heapGenerate(n - 1, arr)
+        for(let i=1; i<n; i++) {
 
-        for(let i=0; i<n-1; i++) {
+            heapPermut(n - 1, arr)
+
             if(n%2) {
-                swap(arr, i, n-1)
-            } else {
                 swap(arr, 0, n-1)
+            } else {
+                swap(arr, i-1, n-1)
             }
-
-            heapGenerate(arr, n-1)
         }
     }
 }
+
+let output = function (arr) {
+    console.log(arr)
+}
+
 
 function permAlone(str) {
   return str;
@@ -34,5 +35,5 @@ function permAlone(str) {
 
 // permAlone('aab');
 
-heapGenerate(['a', 'b', 'c'], output)
 
+heapPermut(['a', 'b', 'c'], output)
