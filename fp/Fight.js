@@ -24,5 +24,17 @@ attack(
     reduceLife,
     checkAttack
 )()
+
+
+function checkAttack(user, enemyWeapon) {
+    let usrAndEnemyWeapon = {...user, ...enemyWeapon}
+    if(enemyWeapon.attack > user.weapon.attack) {
+        usrAndEnemyWeapon[boom] = true
+    } else {
+        usrAndEnemyWeapon[boom] = false
+    }
+
+    return usrAndEnemyWeapon
+}
+
 const reduceLife = () => {}
-const checkAttack = () => {}
