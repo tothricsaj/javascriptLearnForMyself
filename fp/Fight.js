@@ -6,6 +6,7 @@ function Wizzard(name, weapon, life) {
 
 }
 
+
 let user = {
     life: 30,
     weapon: {
@@ -14,7 +15,14 @@ let user = {
     }
 }
 
-const attack = () => {}
+
+const compose = (f, g) => (...args) => f(g(...args))
+
+const attack = (...fns) => fns.reduce(compose)
+
+attack(
+    reduceLife,
+    checkAttack
+)()
 const reduceLife = () => {}
 const checkAttack = () => {}
-const reduceLife = () => {}
