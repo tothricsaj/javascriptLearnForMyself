@@ -1,12 +1,3 @@
-function Elf(name, weapon, life) {
-
-}
-
-function Wizzard(name, weapon, life) {
-
-}
-
-
 let user = {
     life: 30,
     weapon: {
@@ -21,18 +12,34 @@ const compose = (f, g) => (...args) => f(g(...args))
 
 const attack = (...fns) => fns.reduce(compose)
 
-attack(
-    reduceLife,
-    checkAttack
-)()
+console.log(
+    attack(
+        reduceLife,
+        checkAttack
+    )(user, {attack: 29, damage: 3})
+)
 
+console.log(
+    attack(
+        reduceLife,
+        checkAttack
+    )(user, {attack: 22, damage: 3})
+)
+
+console.log(
+    attack(
+        reduceLife,
+        checkAttack
+    )(user, {attack: 42, damage: 12})
+)
 
 function checkAttack(user, enemyWeapon) {
     let usrAndEnemyWeapon = {...user, ...enemyWeapon}
-    if(enemyWeapon.attack > user.weapon.attack) {
-        usrAndEnemyWeapon[boom] = true
+
+    if(enemyWeapon.attack > user.weapon.defense) {
+        usrAndEnemyWeapon.boom = true
     } else {
-        usrAndEnemyWeapon[boom] = false
+        usrAndEnemyWeapon.boom = false
     }
 
     return usrAndEnemyWeapon
@@ -40,7 +47,6 @@ function checkAttack(user, enemyWeapon) {
 
 function reduceLife (usrAndEnemyWeapon) {
     const {boom} = usrAndEnemyWeapon
-    const life = usrAndEnemyWeapon.life - usrAndEnemyWeapon.damage
 
     if(boom) {
         return {
