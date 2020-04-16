@@ -1,17 +1,20 @@
-// attack
-// defense
-// heal
-// magic
-
-function Elf() {
+function Elf(name, weapon, life) {
 
 }
 
-function Wizzard() {
+function Wizzard(name, weapon, life) {
 
+}
+
+let user = {
+    life: 30,
+    weapon: {
+        attack: 20,
+        defense: 24
+    }
 }
 
 const attack = () => {}
-const defense = () => {}
-const heal = () => {}
-const magic = () => {}
+const reduceLife = () => {}
+const checkAttack = () => {}
+const reduceLife = () => {}
