@@ -11,7 +11,8 @@ let user = {
     life: 30,
     weapon: {
         attack: 20,
-        defense: 24
+        defense: 24,
+        damage: 5
     }
 }
 
@@ -37,4 +38,20 @@ function checkAttack(user, enemyWeapon) {
     return usrAndEnemyWeapon
 }
 
-const reduceLife = () => {}
+function reduceLife (usrAndEnemyWeapon) {
+    const {boom} = usrAndEnemyWeapon
+    const life = usrAndEnemyWeapon.life - usrAndEnemyWeapon.damage
+
+    if(boom) {
+        return {
+            life: usrAndEnemyWeapon.life - usrAndEnemyWeapon.damage,
+            weapon: usrAndEnemyWeapon.weapon
+        }
+    }
+
+    return {
+        life: usrAndEnemyWeapon.life,
+        weapon: usrAndEnemyWeapon.weapon
+    }
+
+}
