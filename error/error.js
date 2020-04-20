@@ -4,7 +4,7 @@ function a() {
             return function d() {
                 return function e() {
                     const f = new Error('Oooopsie')
-                    return f
+                    throw f
                 }
             }
         }
@@ -13,7 +13,7 @@ function a() {
 
 function aa() {
     const bb = new Error('Hooopsieeeeee')
-    return bb
+    throw bb
 }
 
 console.log('Call a()')
