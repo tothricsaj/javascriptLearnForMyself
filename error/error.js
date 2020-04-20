@@ -11,4 +11,13 @@ function a() {
     }
 }
 
+function aa() {
+    const bb = new Error('Hooopsieeeeee')
+    return bb
+}
+
+console.log('Call a()')
 a()()()()()
+
+console.log('call aa()')
+aa()
