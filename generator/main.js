@@ -9,7 +9,7 @@ let getDataOne = (cb) => {
 let getDataTwo = (cb) => {
     setTimeout(() => {
         generator.next('dummy data two')
-    }, 1000)
+    }, 2000)
 }
 
 function* main() {
@@ -22,3 +22,5 @@ function* main() {
 
 generator = main()
 generator.next()
+
+for(let i=0; i<100; i++) console.log(i)
