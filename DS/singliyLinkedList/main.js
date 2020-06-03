@@ -29,7 +29,7 @@ class SinglyLinkedList {
     traverse() {
         let current = this.head
         while(current) {
-            console.log(current)
+            console.log(current.val)
             current = current.next
         }
     }
@@ -37,5 +37,8 @@ class SinglyLinkedList {
 
 let list = new SinglyLinkedList
 
-console.log(list.push('hello'))
-console.log(list.push('world'))
+list.push('hello')
+list.push('world')
+list.push('!')
+
+list.traverse()
