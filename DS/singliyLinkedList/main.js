@@ -25,4 +25,17 @@ class SinglyLinkedList {
         this.length++
         return this
     }
+
+    traverse() {
+        let current = this.head
+        while(current) {
+            console.log(current)
+            current = current.next
+        }
+    }
 }
+
+let list = new SinglyLinkedList
+
+console.log(list.push('hello'))
+console.log(list.push('world'))
