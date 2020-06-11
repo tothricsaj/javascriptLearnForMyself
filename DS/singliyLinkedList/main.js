@@ -9,7 +9,6 @@ class SinglyLinkedList {
     constructor() {
         this.head = null
         this.tail = null
-        this.next = null
         this.length = 0
     }
 
@@ -71,8 +70,8 @@ list.push('!')
 
 list.traverse()
 
+console.log(list.unshift('bar'))
 list.unshift('foo')
-list.unshift('bar')
 
 console.log('------------------------------')
 
