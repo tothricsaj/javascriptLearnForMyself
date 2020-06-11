@@ -26,6 +26,21 @@ class SinglyLinkedList {
         return currentValue
     }
 
+    unshift(val) {
+        let newNode = new Node(val)
+
+        if(!this.head) {
+            this.head = newNode
+            this.tail = this.head
+        } else {
+            newNode.next = this.head
+            this.head = newNode
+        }
+
+        this.length++
+        return this
+    }
+
     push(val) {
         let newNode = new Node(val)
         if(!this.head) {
@@ -56,8 +71,9 @@ list.push('!')
 
 list.traverse()
 
-console.log('---------------------------------------')
-console.log(list.shift().val)
-console.log('---------------------------------------')
+list.unshift('foo')
+list.unshift('bar')
+
+console.log('------------------------------')
 
 list.traverse()
