@@ -96,4 +96,10 @@ list.push('!')
 list.push('$')
 list.push('<3')
 
-console.log(list.get(3).val)
+list.traverse()
+
+list.set(2, '!!!!!!')
+
+console.log(list.get(2).val)
+
+list.traverse()
