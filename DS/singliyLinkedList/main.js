@@ -13,6 +13,19 @@ class SinglyLinkedList {
         this.length = 0
     }
 
+    shift() {
+        if(!this.head) return undefined
+
+        let currentValue = this.head
+        this.head = currentValue.next
+
+        this.length--
+
+        if(this.length === 0) this.tail = null
+
+        return currentValue
+    }
+
     push(val) {
         let newNode = new Node(val)
         if(!this.head) {
