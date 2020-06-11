@@ -72,6 +72,8 @@ class SinglyLinkedList {
             current = current.next
             counter++
         }
+
+        return current
     }
 }
 
@@ -80,12 +82,7 @@ let list = new SinglyLinkedList
 list.push('hello')
 list.push('world')
 list.push('!')
+list.push('$')
+list.push('<3')
 
-list.traverse()
-
-console.log(list.unshift('bar'))
-list.unshift('foo')
-
-console.log('------------------------------')
-
-list.traverse()
+console.log(list.get(3).val)
