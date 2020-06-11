@@ -53,6 +53,24 @@ class SinglyLinkedList {
         return this
     }
 
+    pop(){
+        if(!this.head) return undefined;
+        var current = this.head;
+        var newTail = current;
+        while(current.next){
+            newTail = current;
+            current = current.next;
+        }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+        return current;
+    }
+
     traverse() {
         let current = this.head
         while(current) {
@@ -100,6 +118,21 @@ class SinglyLinkedList {
         this.length++
         return true
     }
+
+    remove(index) {
+        if(index < 0 || index >= this.length) return undefined
+        if(index === this.length - 1) return this.pop()
+        if(index === 0) return this.shift()
+
+        let prevNode = this.get(index-1)
+        let removed = prevNode.next
+
+        prevNode.next = removed.next
+
+        this.length--
+
+        return removed
+    }
 }
 
 let list = new SinglyLinkedList
@@ -124,6 +157,21 @@ console.log('--------------------------------------')
 list.traverse()
 
 list.insert(0, 0)
+
+console.log('--------------------------------------')
+list.traverse()
+
+list.remove(3)
+
+console.log('--------------------------------------')
+list.traverse()
+
+list.remove(0)
+
+console.log('--------------------------------------')
+list.traverse()
+
+list.remove(4)
 
 console.log('--------------------------------------')
 list.traverse()
