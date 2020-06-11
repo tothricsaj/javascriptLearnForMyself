@@ -94,9 +94,8 @@ class SinglyLinkedList {
 
         let newNode = new Node(val)
         let prevNode = this.get(index - 1)
-        let tmp = prevNode.next
+        newNode.next = prevNode.next
         prevNode.next = newNode
-        newNode.next = tmp
 
         this.length++
         return true
@@ -105,16 +104,28 @@ class SinglyLinkedList {
 
 let list = new SinglyLinkedList
 
-list.push('hello')
-list.push('world')
-list.push('!')
-list.push('$')
-list.push('<3')
+list.push(1)
+list.push(2)
+list.push(3)
+list.push(5)
+
 
 list.traverse()
+console.log('--------------------------------------')
 
-list.set(2, '!!!!!!')
+list.insert(3, 4)
 
-console.log(list.get(2).val)
-
+console.log('--------------------------------------')
 list.traverse()
+
+list.insert(5, 6)
+
+console.log('--------------------------------------')
+list.traverse()
+
+list.insert(0, 0)
+
+console.log('--------------------------------------')
+list.traverse()
+
+
