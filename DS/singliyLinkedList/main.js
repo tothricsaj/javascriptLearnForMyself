@@ -55,3 +55,9 @@ list.push('world')
 list.push('!')
 
 list.traverse()
+
+console.log('---------------------------------------')
+console.log(list.shift().val)
+console.log('---------------------------------------')
+
+list.traverse()
