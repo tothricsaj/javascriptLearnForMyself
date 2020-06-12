@@ -133,6 +133,28 @@ class SinglyLinkedList {
 
         return removed
     }
+
+    reverse() {
+        let tmp = this.head
+
+        this.head = this.tail
+        this.tail = tmp
+
+        let next,
+            prev,
+            node = this.head
+
+        while(tmp) {
+
+            node = tmp.next
+            prev = tmp
+            node.next = prev
+
+            tmp = tmp.next
+        }
+
+        return true
+    }
 }
 
 let list = new SinglyLinkedList
@@ -141,39 +163,5 @@ list.push(1)
 list.push(2)
 list.push(3)
 list.push(5)
-
-
-list.traverse()
-console.log('--------------------------------------')
-
-list.insert(3, 4)
-
-console.log('--------------------------------------')
-list.traverse()
-
-list.insert(5, 6)
-
-console.log('--------------------------------------')
-list.traverse()
-
-list.insert(0, 0)
-
-console.log('--------------------------------------')
-list.traverse()
-
-list.remove(3)
-
-console.log('--------------------------------------')
-list.traverse()
-
-list.remove(0)
-
-console.log('--------------------------------------')
-list.traverse()
-
-list.remove(4)
-
-console.log('--------------------------------------')
-list.traverse()
 
 
