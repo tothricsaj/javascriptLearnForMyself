@@ -135,25 +135,21 @@ class SinglyLinkedList {
     }
 
     reverse() {
-        let tmp = this.head
-
+        let node = this.head
         this.head = this.tail
-        this.tail = tmp
+        this.tail = node
 
         let next,
-            prev,
-            node = this.head
+            prev = null
 
-        while(tmp) {
-
-            node = tmp.next
-            prev = tmp
+        for(let i=0; i<this.length; i++) {
+            next = node.next
             node.next = prev
-
-            tmp = tmp.next
+            prev = node
+            node = next
         }
 
-        return true
+        return this
     }
 }
 
@@ -164,4 +160,9 @@ list.push(2)
 list.push(3)
 list.push(5)
 
+list.traverse()
+console.log('-------------------------------------')
 
+list.reverse()
+
+list.traverse()
