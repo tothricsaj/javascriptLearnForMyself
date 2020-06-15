@@ -7,7 +7,7 @@ class Node {
 }
 
 class DoublyLinkedList {
-    consturctor() {
+    constructor() {
         this.head = null
         this.tail = null
         this.length = 0
@@ -16,7 +16,10 @@ class DoublyLinkedList {
     push(val) {
         let newNode = new Node(val)
 
-        if(this.head === null) this.head = newNode
+        if(this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        }
         else {
             this.tail.next = newNode
             newNode.prev = this.tail
@@ -31,4 +34,4 @@ class DoublyLinkedList {
 
 let dll = new DoublyLinkedList()
 
-dll.push(3)
+console.log(dll.push(3))
