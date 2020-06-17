@@ -48,16 +48,17 @@ class DoublyLinkedList {
 
     shift() {
         if(this.length === 0) return undefined
-        if(this.length === 1) {
-            this.head = null
-            thisl.tail = null
-        }
 
         let oldHead = this.head
 
-        this.head = oldHead.next
-        this.head.prev = null
-        oldHead.next = null
+        if(this.length === 1) {
+            this.head = null
+            thisl.tail = null
+        } else {
+            this.head = oldHead.next
+            this.head.prev = null
+            oldHead.next = null
+        }
 
         this.length--
 
@@ -67,11 +68,12 @@ class DoublyLinkedList {
 
 let dll = new DoublyLinkedList()
 
-console.log(dll.push(3))
-
+dll.push(1)
+dll.push(2)
+dll.push(3)
 dll.push(4)
 dll.push(5)
 
-console.log(dll)
-console.log(dll.pop().val)
+console.log(dll.shift().val)
+
 console.log(dll)
