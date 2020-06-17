@@ -64,16 +64,31 @@ class DoublyLinkedList {
 
         return oldHead
     }
+
+    unshif(val) {
+        let newNode = new Node(val)
+
+        if(this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }
+
+        this.length++
+
+        return this
+    }
 }
 
 let dll = new DoublyLinkedList()
 
-dll.push(1)
-dll.push(2)
-dll.push(3)
-dll.push(4)
-dll.push(5)
+dll.push('Harry')
+dll.push('Hermione')
+dll.push('Ron')
 
-console.log(dll.shift().val)
+dll.unshif('Voldemort')
 
 console.log(dll)
