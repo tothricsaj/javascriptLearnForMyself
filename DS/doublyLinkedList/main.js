@@ -85,10 +85,11 @@ class DoublyLinkedList {
 
 let dll = new DoublyLinkedList()
 
-dll.push('Harry')
-dll.push('Hermione')
-dll.push('Ron')
+// dll.push('Harry')
+// dll.push('Hermione')
+// dll.push('Ron')
 
 dll.unshif('Voldemort')
+dll.unshif('Hagrid')
 
 console.log(dll)
