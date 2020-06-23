@@ -59,4 +59,35 @@ class BST {
         }
         return false
     }
+
+    find(value) {
+        if(this.root === null) return null
+        
+        let current = this.root,
+            found = false
+
+        while(current && !found) {
+            if(value < current.value) {
+                current = current.left
+            } else if(value > current.value) {
+                current = current.right
+            } else {
+                found = true
+            }
+        }
+        return current
+    }
 }
+
+let tree = new BST()
+
+tree.insert(33)
+tree.insert(42)
+tree.insert(32)
+tree.insert(9)
+tree.insert(7)
+tree.insert(2)
+tree.insert(45)
+tree.insert(1)
+tree.insert(20)
+
