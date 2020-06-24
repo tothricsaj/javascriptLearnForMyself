@@ -77,6 +77,13 @@ class BST {
         }
         return current
     }
+
+    BFS() {
+        let data = [],
+            queue = []
+        
+        queue.push(this.root)
+    }
 }
 
 let tree = new BST()
