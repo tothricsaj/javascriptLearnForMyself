@@ -78,38 +78,35 @@ class BST {
         return current
     }
 
-    // BFS() {
-    //     let node = this.root,
-    //         data = [],
-    //         queue = []
-        
-    //     queue.push(node)
-
-    //     while(queue.length) {
-    //         node = queue.shift()
-    //         data.push(node.value)
-    //         if(node.left) queue.push(node.left)
-    //         if(node.right) queue.push(node.right)
-    //     }
-
-    //     return data
-    // }
-
-    BFS(){
-        var node = this.root,
+    BFS() {
+        let node = this.root,
             data = [],
-            queue = [];
-        queue.push(node);
+            queue = []
+        
+        queue.push(node)
 
-        while(queue.length){
-           node = queue.shift();
-           data.push(node.value);
-           if(node.left) queue.push(node.left);
-           if(node.right) queue.push(node.right);
+        while(queue.length) {
+            node = queue.shift()
+            data.push(node.value)
+            if(node.left) queue.push(node.left)
+            if(node.right) queue.push(node.right)
         }
-        return data;
+
+        return data
+    }
+
+    DFSPreOrdert() {
+        var data = []
+
     }
 }
+
+            //      33
+            //    32  42
+            //   9      45
+            //  2
+
+// [33, 32, 42, 9, 45, 2]
 
 let tree = new BST()
 
@@ -117,11 +114,8 @@ tree.insert(33)
 tree.insert(42)
 tree.insert(32)
 tree.insert(9)
-tree.insert(7)
 tree.insert(2)
 tree.insert(45)
-tree.insert(1)
-tree.insert(20)
 
 console.log(tree)
 
