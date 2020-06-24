@@ -91,3 +91,8 @@ tree.insert(45)
 tree.insert(1)
 tree.insert(20)
 
+console.log(tree)
+
+
+console.log(tree.contains(20))
+console.log(tree.find(9))
