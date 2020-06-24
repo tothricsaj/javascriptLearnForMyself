@@ -78,11 +78,36 @@ class BST {
         return current
     }
 
-    BFS() {
-        let data = [],
-            queue = []
+    // BFS() {
+    //     let node = this.root,
+    //         data = [],
+    //         queue = []
         
-        queue.push(this.root)
+    //     queue.push(node)
+
+    //     while(queue.length) {
+    //         node = queue.shift()
+    //         data.push(node.value)
+    //         if(node.left) queue.push(node.left)
+    //         if(node.right) queue.push(node.right)
+    //     }
+
+    //     return data
+    // }
+
+    BFS(){
+        var node = this.root,
+            data = [],
+            queue = [];
+        queue.push(node);
+
+        while(queue.length){
+           node = queue.shift();
+           data.push(node.value);
+           if(node.left) queue.push(node.left);
+           if(node.right) queue.push(node.right);
+        }
+        return data;
     }
 }
 
@@ -103,3 +128,5 @@ console.log(tree)
 
 console.log(tree.contains(20))
 console.log(tree.find(9))
+
+console.log(tree.BFS())
