@@ -97,6 +97,15 @@ class BST {
 
     DFSPreOrdert() {
         var data = []
+        function traversal(node) {
+            data.push(node.value)
+            if(node.left) traversal(node.left)
+            if(node.right) traversal(node.right)
+        }
+
+        traversal(this.root)
+        return data
+
 
     }
 }
@@ -106,7 +115,8 @@ class BST {
             //   9      45
             //  2
 
-// [33, 32, 42, 9, 45, 2]
+// [33, 32, 42, 9, 45, 2] BFS
+// [33, 32, 9,2, 42, 45]
 
 let tree = new BST()
 
@@ -124,3 +134,5 @@ console.log(tree.contains(20))
 console.log(tree.find(9))
 
 console.log(tree.BFS())
+
+console.log(tree.DFSPreOrdert())
