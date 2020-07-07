@@ -157,4 +157,4 @@ console.log(tree.find(9))
 
 console.log(tree.BFS())
 
-console.log(tree.DFSPostOrdert())
+console.log(tree.DFSInOrdert())
