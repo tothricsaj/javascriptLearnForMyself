@@ -108,6 +108,17 @@ class BST {
 
 
     }
+
+    DFSPostOrdert() {
+        var data = []
+        function traversal(node) {
+            if(node.left) traversal(node.left)
+            if(node.right) traversal(node.right)
+            data.push(node.value)
+        }
+        traversal(this.root)
+        return data
+    }
 }
 
             //      33
@@ -135,4 +146,4 @@ console.log(tree.find(9))
 
 console.log(tree.BFS())
 
-console.log(tree.DFSPreOrdert())
+console.log(tree.DFSPostOrdert())
