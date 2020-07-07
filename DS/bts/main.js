@@ -119,24 +119,35 @@ class BST {
         traversal(this.root)
         return data
     }
+
+    DFSInOrdert() {
+        var data = []
+        function traversal(node) {
+            if(node.left) traversal(node.left)
+            data.push(node.value)
+            if(node.right) traversal(node.right)
+        }
+        traversal(this.root)
+        return data
+    }
+
 }
 
-            //      33
-            //    32  42
-            //   9      45
-            //  2
+            //      10
+            //    6   15
+            //   3 8    20
 
 // [33, 32, 42, 9, 45, 2] BFS
 // [33, 32, 9,2, 42, 45]
 
 let tree = new BST()
 
-tree.insert(33)
-tree.insert(42)
-tree.insert(32)
-tree.insert(9)
-tree.insert(2)
-tree.insert(45)
+tree.insert(10)
+tree.insert(6)
+tree.insert(15)
+tree.insert(3)
+tree.insert(8)
+tree.insert(20)
 
 console.log(tree)
 
